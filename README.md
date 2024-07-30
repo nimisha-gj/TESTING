@@ -1,6 +1,6 @@
 # terraform-aws-ecs
 <!-- BEGIN_TF_DOCS -->
-Main module
+Main module is this
 
 ## Requirements
 

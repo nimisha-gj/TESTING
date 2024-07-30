@@ -25,6 +25,9 @@ variable "amiid" {
 variable "amiiadfd" {
   default = "ami-068e0f1a600cd311c"
 }
+variable "duplicate_ami_id" {
+  default = "ami-068e0f1a600cd311c"
+}
 
 variable "it" {
   default = "t2.micro"

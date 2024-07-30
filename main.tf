@@ -22,6 +22,9 @@ resource "aws_instance" "web" {
 variable "amiid" {
   default = "ami-068e0f1a600cd311c"
 }
+variable "amiiadfd" {
+  default = "ami-068e0f1a600cd311c"
+}
 
 variable "it" {
   default = "t2.micro"

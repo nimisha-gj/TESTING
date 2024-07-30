@@ -1,6 +1,6 @@
 # terraform-aws-ecs
 <!-- BEGIN_TF_DOCS -->
-Testing main module pakka
+Testing main module pakka pakka
 
 ## Requirements
 

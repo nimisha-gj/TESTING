@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  callGenerateDocs:
+  CallMasterTerraformWorkflow:
     uses: nimisha-gj/terraform-workflows/.github/workflows/terraform.yaml@main
     with:
       ref: ${{ github.event.pull_request.head.ref }}

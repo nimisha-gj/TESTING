@@ -12,7 +12,7 @@ on:
 
 jobs:
   callGenerateDocs:
-    uses: nimisha-gj/terraform-workflows/.github/workflows/terraform-docs.yaml@main
+    uses: nimisha-gj/terraform-workflows/.github/workflows/terraform.yaml@main
     with:
       ref: ${{ github.event.pull_request.head.ref }}
     secrets:

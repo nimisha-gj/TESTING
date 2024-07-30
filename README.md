@@ -1,6 +1,6 @@
 # terraform-aws-ecs
 <!-- BEGIN_TF_DOCS -->
-Main module finaladfasdfads
+Testing main module pakka
 
 ## Requirements
 
@@ -31,6 +31,8 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_amiiadfd"></a> [amiiadfd](#input\_amiiadfd) | n/a | `string` | `"ami-068e0f1a600cd311c"` | no |
 | <a name="input_amiid"></a> [amiid](#input\_amiid) | n/a | `string` | `"ami-068e0f1a600cd311c"` | no |
+| <a name="input_duplicate1_ami_id"></a> [duplicate1\_ami\_id](#input\_duplicate1\_ami\_id) | n/a | `string` | `"ami-068e0f1a600cd311c"` | no |
+| <a name="input_duplicate_ami_id"></a> [duplicate\_ami\_id](#input\_duplicate\_ami\_id) | n/a | `string` | `"ami-068e0f1a600cd311c"` | no |
 | <a name="input_it"></a> [it](#input\_it) | n/a | `string` | `"t2.micro"` | no |
 
 ## Outputs

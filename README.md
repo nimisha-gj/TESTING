@@ -29,6 +29,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_amiiadfd"></a> [amiiadfd](#input\_amiiadfd) | n/a | `string` | `"ami-068e0f1a600cd311c"` | no |
 | <a name="input_amiid"></a> [amiid](#input\_amiid) | n/a | `string` | `"ami-068e0f1a600cd311c"` | no |
 | <a name="input_it"></a> [it](#input\_it) | n/a | `string` | `"t2.micro"` | no |
 

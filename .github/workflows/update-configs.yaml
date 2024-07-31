@@ -22,6 +22,11 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         path: target-repo
 
+    - name: Set up Git
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+
     - name: Copy files from template repository
       run: |
         cp template-repo/.editorconfig target-repo/

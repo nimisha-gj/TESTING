@@ -36,7 +36,6 @@ jobs:
         cp template-repo/.releaserc.json target-repo/
         cp template-repo/CODE_OF_CONDUCT.md target-repo/
         cp template-repo/CONTRIBUTING.md target-repo/
-        cp -r template-repo/.github/workflows target-repo/.github/
 
     - name: Commit and push changes
       run: |

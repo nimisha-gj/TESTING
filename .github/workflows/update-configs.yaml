@@ -1,0 +1,41 @@
+name: Update from Template
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout terraform-aws-ecs repository
+      uses: actions/checkout@v3
+
+    - name: Set up Git
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+
+    - name: Clone terraform-module-template repository
+      run: |
+        git clone https://github.com/nimisha-gj/terraform-module-template.git
+        cd terraform-module-template
+        git checkout main
+
+    - name: Copy files from terraform-module-template
+      run: |
+        cp -r terraform-module-template/.editorconfig terraform-aws-ecs/
+        cp -r terraform-module-template/.pre-commit-config.yaml terraform-aws-ecs/
+        cp -r terraform-module-template/LICENSE terraform-aws-ecs/
+        cp -r terraform-module-template/.tflint.hcl terraform-aws-ecs/
+        cp -r terraform-module-template/.releaserc.json terraform-aws-ecs/
+        cp -r terraform-module-template/CODE_OF_CONDUCT.md terraform-aws-ecs/
+        cp -r terraform-module-template/CONTRIBUTING.md terraform-aws-ecs/
+        cp -r terraform-module-template/.github/workflows terraform-aws-ecs/.github/
+
+    - name: Commit and push changes
+      run: |
+        cd terraform-aws-ecs
+        git add .
+        git commit -m "Update files from terraform-module-template"
+        git push

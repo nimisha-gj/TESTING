@@ -8,34 +8,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout terraform-aws-ecs repository
+    - name: Checkout template repository
       uses: actions/checkout@v3
+      with:
+        repository: nimisha-gj/terraform-module-template
+        token: ${{ secrets.GITHUB_TOKEN }}
+        path: template-repo
 
-    - name: Set up Git
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
+    - name: Checkout target repository
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ github.repository }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        path: target-repo
 
-    - name: Clone terraform-module-template repository
+    - name: Copy files from template repository
       run: |
-        git clone https://github.com/nimisha-gj/terraform-module-template.git
-        cd terraform-module-template
-        git checkout main
-
-    - name: Copy files from terraform-module-template
-      run: |
-        cp -r terraform-module-template/.editorconfig terraform-aws-ecs/
-        cp -r terraform-module-template/.pre-commit-config.yaml terraform-aws-ecs/
-        cp -r terraform-module-template/LICENSE terraform-aws-ecs/
-        cp -r terraform-module-template/.tflint.hcl terraform-aws-ecs/
-        cp -r terraform-module-template/.releaserc.json terraform-aws-ecs/
-        cp -r terraform-module-template/CODE_OF_CONDUCT.md terraform-aws-ecs/
-        cp -r terraform-module-template/CONTRIBUTING.md terraform-aws-ecs/
-        cp -r terraform-module-template/.github/workflows terraform-aws-ecs/.github/
+        cp template-repo/.editorconfig target-repo/
+        cp template-repo/.pre-commit-config.yaml target-repo/
+        cp template-repo/LICENSE target-repo/
+        cp template-repo/.tflint.hcl target-repo/
+        cp template-repo/.releaserc.json target-repo/
+        cp template-repo/CODE_OF_CONDUCT.md target-repo/
+        cp template-repo/CONTRIBUTING.md target-repo/
+        cp -r template-repo/.github/workflows target-repo/.github/
 
     - name: Commit and push changes
       run: |
-        cd terraform-aws-ecs
+        cd target-repo
         git add .
         git commit -m "Update files from terraform-module-template"
         git push
